@@ -137,11 +137,14 @@ DListIterator<T> DList<T>::getIterator()
 template <class T>
 void DList<T>::insert(DListIterator<T> &iter, T item)
 {
-	if (iter.list != this|| iter.currentNode == nullptr)
+	if (iter.list != this)
 	{
 		return;
 	}
-	
+	else if (iter.currentNode == nullptr)
+	{
+		append(item);
+	}
 	else
 	{
 		iter.currentNode->insertBefore(item);

@@ -237,7 +237,8 @@ namespace DoublyLinkedListTests
 			DList<int> list;
 			DListIterator<int> iter = list.getIterator();
 			list.insert(iter, 1);
-			Assert::IsNull(list.head);
+			Assert::IsNotNull(list.head);
+			Assert::AreSame(*list.head, *list.tail);
 
 
 		}
